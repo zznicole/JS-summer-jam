@@ -6,8 +6,12 @@ Examples:
     doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
 */
 // function doubleValues(arr){
+  
+//    arr.forEach(element => console.log(element * 2));
     
 // }
+
+// console.log(doubleValues([1,2,3]));
 
 /*
 Write a function called onlyEvenValues which 

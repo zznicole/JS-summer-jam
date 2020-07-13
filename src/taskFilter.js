@@ -5,11 +5,14 @@ Examples:
     filterByValue([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner') // [{first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Colt', last:"Steele", isCatOwner: true}]
 */
 
-// function filterByValue(arr, key) {
-//  Let withValue = arr.filter(arr.key => arr.key == true);
-//  return withValue;
-// }
-// console.log(filterByValue([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner'));
+function filterByValue(arr, key) {
+    for(let i = 0; i < arr.length; i++) {
+    let withValueArr = arr.filter(obj => obj[key] == true);
+    return withValueArr;
+  }
+ 
+}
+console.log(filterByValue([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner'));
 
 
 /*
@@ -34,7 +37,8 @@ Examples:
 */
 
 function findInObj(arr, key, searchValue) {
-  let result = arr.find(arr.key => arr.key === searchValue);
+  let result = arr.find(obj => obj[key] == searchValue);
+  return result;
 }
 
 console.log(findInObj([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner',true));
@@ -50,9 +54,11 @@ Examples:
 */
 
 function removeVowels(str) {
-  let lowerCaseStr = str.toLowerCase();
-  let noVowelArr = lowerCaseStr.filter(letter => letter !== a && letter !== e && letter !== i && letter !== o && letter !== u);
-  return noVowelArr;
+  let lowerCaseStr = str.toLowerCase();  
+  let lowerCaseArr = Array.from(lowerCaseStr); 
+  let noVowelArr = lowerCaseArr.filter(letter => letter !== 'a' && letter !== 'e' && letter !== 'i' && letter !== 'o' && letter !== 'u' );
+  return noVowelArr.toString();
+  
 }
 
 console.log(removeVowels('Elie'));
@@ -70,4 +76,4 @@ function doubleOddNumbers(arr) {
   return newArr.map(n => n * 2);
 
 }
-console.log(doubleOddNumbers([1, 2, 3, 4, 5]));
+console.log(doubleOddNumbers([4,4,4,4,4]));
