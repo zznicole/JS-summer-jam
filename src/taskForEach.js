@@ -7,10 +7,8 @@ Examples:
 */
 function doubleValues(arr){
    let newArr = [ ];
-   newArr.push(arr.forEach(element => console.log(element * 2)));
+   arr.forEach(element => newArr.push(element * 2));
    return newArr;
-  
-    
 }
 
 console.log(doubleValues([1,2,3]));
@@ -22,9 +20,15 @@ Examples:
     onlyEvenValues([1,2,3]) // [2]
     onlyEvenValues([5,1,2,3,10]) // [2,10]
 */
-// function onlyEvenValues(arr){
-    
-// }
+function onlyEvenValues(arr){
+    let newArr = [ ];
+    arr.forEach(element => { if (element % 2 === 0) { 
+        return newArr.push(element);
+    }
+    });
+}
+
+console.log(onlyEvenValues([1,2,3]));
 
 /*
 Write a function called showFirstAndLast which accepts
