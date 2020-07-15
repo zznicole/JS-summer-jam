@@ -8,9 +8,10 @@ Examples:
 
 // var arr = [{name: 'Sam'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Bob'}]
 
-// function extractValue(arr, key){
-    
+// function extractValue(arr, key) { 
+   
 // }
+
 
 
 /*
